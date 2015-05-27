@@ -10,4 +10,16 @@ dependencies {
      testCompile "junit:junit:4.11"
 }
 
+test {
+ testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
+
+defaultTasks 'test', 'run'
+
 mainClassName = "MainClass"
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
